@@ -6,8 +6,8 @@
 //==============================================================================
 RnNoiseAudioProcessor::RnNoiseAudioProcessor()
         : AudioProcessor(BusesProperties()
-                                 .withInput("Input", juce::AudioChannelSet::namedChannelSet(NUM_CHANNELS), true)
-                                 .withOutput("Output", juce::AudioChannelSet::namedChannelSet(NUM_CHANNELS), true)
+                                 .withInput("Input", juce::AudioChannelSet::stereo(), true)
+                                 .withOutput("Output", juce::AudioChannelSet::stereo(), true)
 ), m_parameters(*this, nullptr, juce::Identifier("RNNoise"),
                 {
                         std::make_unique<juce::AudioParameterFloat>("vad_threshold",
